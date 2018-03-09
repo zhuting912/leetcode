@@ -9,10 +9,16 @@ You may assume that each input would have exactly one solution, and you may not 
 假设有唯一解，并且一个元素不能使用两次。
 '''
 
-class MySolution():
-    def twoSum(self, nums, target):
-        '''
-        :param nums: List[int]
-        :param target: int
-        :return: List[int]
-        '''
+
+def twoSum(nums, target):
+    '''
+    :param nums: List[int]
+    :param target: int
+    :return: List[int]
+    '''
+    dict = {}
+    for i, element in enumerate(nums):
+        if element in dict:
+            return [dict[element], i]
+        else:
+            dict[target - element] = i
